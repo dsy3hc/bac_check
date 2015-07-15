@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent" >
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate BAC"
+        android:id="@+id/textView1"
+        android:layout_x="73dip"
+        android:layout_y="28dip"
+        android:layout_gravity="center_horizontal"> </TextView>
+    <TextView android:layout_width="wrap_content"
+        android:layout_x="36dip"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:id="@+id/Gender"
+        android:layout_y="80dip"> </TextView>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroupP">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:id="@+id/radioMaleP"
+            android:text="Male"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioFemaleP"
+            android:text="Female"/>
+    </RadioGroup>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_x="36dip"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:id="@+id/Weight"
+        android:layout_y="80dip"> </TextView>
+
+    <EditText
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editWeightP" />
+
+
+    <Button android:layout_width="wrap_content"
+        android:id="@+id/pStart"
+        android:layout_x="41dip"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_y="232dip"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal"> </Button>
+
+</LinearLayout>

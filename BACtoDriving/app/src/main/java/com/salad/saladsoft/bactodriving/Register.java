@@ -6,10 +6,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class Register extends ActionBarActivity implements View.OnClickListener{
-    EditText etName, etWeight, etUsername, etPassword;
+    EditText etName, etWeight, etUsername, etPassword, etCPassword;
     Button bRegister;
 
     @Override
@@ -18,9 +19,10 @@ public class Register extends ActionBarActivity implements View.OnClickListener{
         setContentView(R.layout.activity_register);
 
         etName = (EditText) findViewById(R.id.etName);
-        etWeight = (EditText) findViewById(R.id.etWeight);
+        etWeight = (EditText) findViewById(R.id.registerWeight);
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
+        etCPassword = (EditText) findViewById(R.id.etCPassword);
         bRegister = (Button) findViewById(R.id.bRegister);
 
         bRegister.setOnClickListener(this);
@@ -33,10 +35,16 @@ public class Register extends ActionBarActivity implements View.OnClickListener{
                 String name = etName.getText().toString();
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
+                String password2 = etCPassword.getText().toString();
                 int age = Integer.parseInt(etWeight.getText().toString());
-
-                User user = new User(name, age, username, password);
-                registerUser(user);
+                if(password.equals(password2)) {
+                    User user = new User(name, age, username, password);
+                    registerUser(user);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Passwords Don't Match!",
+                            Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

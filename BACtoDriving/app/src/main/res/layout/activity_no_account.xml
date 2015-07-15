@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate BAC"
+        android:id="@+id/textView1"
+        android:layout_x="73dip"
+        android:layout_y="28dip"
+        android:textSize="32sp"
+        android:layout_gravity="center_horizontal"> </TextView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_weight="0.17" />
+
+    <Button android:layout_width="wrap_content"
+        android:id="@+id/qCalc"
+        android:layout_x="41dip"
+        android:layout_height="wrap_content"
+        android:text="Quick BAC Check"
+        android:layout_y="232dip"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal"> </Button>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dip"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Party Mode"
+        android:id="@+id/pBAC"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dip"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help"
+        android:id="@+id/help"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:id="@+id/tvLoginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick"
+        android:text="Login Here"
+        android:textStyle="bold"
+        android:layout_weight="0.12" />
+
+</LinearLayout>

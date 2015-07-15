@@ -1,9 +1,17 @@
 <resources>
     <string name="app_name">BACtoDriving</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_login">Login</string>
-    <string name="title_activity_register">Register</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_calculate">Calculate</string>
+    <string name="hello_world">BACtoDriving</string>
+    <string name="action_settings">BACtoDriving</string>
+    <string name="title_activity_login">BACtoDriving</string>
+    <string name="title_activity_register">BACtoDriving</string>
+    <string name="title_activity_main">BACtoDriving</string>
+    <string name="title_activity_calculate">BACtoDriving</string>
+    <string name="title_activity_calculation">BACtoDriving</string>
+    <string name="title_activity_no_account">BACtoDriving</string>
+    <string name="title_activity_quick_calc">BACtoDriving</string>
+    <string name="title_activity_party_calc">BACtoDriving</string>
+    <string name="title_activity_help">BACtoDriving</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

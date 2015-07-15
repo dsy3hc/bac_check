@@ -40,14 +40,16 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
             case R.id.bLogin:
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
-
                 User user = new User(username, password);
-
                 authenticate(user);
                 break;
             case R.id.tvRegisterLink:
                 Intent registerIntent = new Intent(Login.this, Register.class);
                 startActivity(registerIntent);
+                break;
+            case R.id.noAccount:
+                Intent noAccountIntent = new Intent(this, noAccount.class);
+                startActivity(noAccountIntent);
                 break;
         }
     }

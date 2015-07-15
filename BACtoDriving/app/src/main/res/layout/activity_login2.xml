@@ -36,6 +36,13 @@
         android:layout_height="wrap_content"
         android:text="Login" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proceed Without an Account"
+        android:onClick="onClick"
+        android:id="@+id/noAccount" />
+
     <TextView
         android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"

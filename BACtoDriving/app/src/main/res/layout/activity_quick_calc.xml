@@ -9,7 +9,34 @@
         android:text="Calculate BAC"
         android:id="@+id/textView1"
         android:layout_x="73dip"
-        android:layout_y="28dip"> </TextView>
+        android:layout_y="28dip"
+        android:layout_gravity="center_horizontal"> </TextView>
+    <TextView android:layout_width="wrap_content"
+        android:layout_x="36dip"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:id="@+id/Gender"
+        android:layout_y="80dip"> </TextView>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:id="@+id/radioMale"
+            android:text="Male"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioFemale"
+            android:text="Female"/>
+    </RadioGroup>
+
     <TextView android:layout_width="wrap_content"
         android:layout_x="36dip"
         android:layout_height="wrap_content"
@@ -20,7 +47,7 @@
     <EditText
         android:layout_width="134dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/editWeight" />
 
@@ -33,7 +60,7 @@
     <EditText
         android:layout_width="133dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/editDrinks" />
 
@@ -55,23 +82,8 @@
         android:layout_x="41dip"
         android:layout_height="wrap_content"
         android:text="Calculate"
+        android:layout_y="232dip"
         android:onClick="onClick"
-        android:layout_y="232dip"> </Button>
-    <EditText android:text=""
-        android:layout_width="142dp"
-        android:layout_x="172dip"
-        android:id="@+id/tt"
-        android:layout_height="wrap_content"
-        android:layout_y="232dip"> </EditText>
-    <TextView android:layout_width="wrap_content"
-        android:layout_x="36dip"
-        android:layout_height="wrap_content"
-        android:text="Hours Left"
-        android:id="@+id/HoursLeft"
-        />
-    <EditText android:text=""
-        android:layout_width="142dp"
-        android:id="@+id/tt2"
-        android:layout_height="wrap_content"
-        />
+        android:layout_gravity="center_horizontal"> </Button>
+
 </LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_x="36dip"
+        android:text="@string/hello_world"
+        android:layout_height="wrap_content"
+        android:id="@+id/bac"
+        android:textSize="32sp"
+        android:layout_gravity="center_horizontal"
+        android:focusableInTouchMode="false"
+        android:layout_weight="0.08" />
+    <TextView android:layout_width="wrap_content"
+        android:layout_x="36dip"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:id="@+id/Drive"
+        android:textSize="24sp"
+        android:layout_y="80dip"> </TextView>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.11" />
+
+    <Button android:layout_width="wrap_content"
+        android:id="@+id/qBack"
+        android:layout_x="41dip"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Go Back"
+        android:layout_y="232dip"
+        android:layout_gravity="center_horizontal"> </Button>
+
+
+</LinearLayout>

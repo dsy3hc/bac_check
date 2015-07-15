@@ -39,6 +39,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 Intent loginIntent = new Intent(this, Login.class);
                 startActivity(loginIntent);
                 break;
+            case R.id.bCalc:
+                Intent calculateIntent = new Intent(this, Calculate.class);
+                startActivity(calculateIntent);
+                break;
         }
     }
 
@@ -65,8 +69,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         etName.setText(user.name);
         etWeight.setText(user.weight + "");
     }
-    public void sendMessage(View view) {
+   /* public void sendMessage(View view) {
         Intent intent = new Intent(this, Calculate.class);
         startActivity(intent);
-    }
+    }*/
 }
