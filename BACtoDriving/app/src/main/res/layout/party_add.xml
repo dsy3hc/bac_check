@@ -11,7 +11,7 @@
         android:layout_y="80dip"> </TextView>
 
     <EditText
-        android:layout_width="134dp"
+        android:layout_width="186dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"

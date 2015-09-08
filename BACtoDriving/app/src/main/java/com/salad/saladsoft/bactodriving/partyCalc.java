@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -46,17 +47,20 @@ public class partyCalc extends ActionBarActivity {
     double a=0;
     double C1=0;
     double C2=0;
+    double a3;
     double bac_check=0;
     double bac_check2=0;
     long diff;
     double timeDiff;
     int selectedId;
+    int a2;
 
     DateFormat dateFormat;
     Calendar cal;
     Calendar cal2;
     java.util.Date now;
     Date dat2;
+    Date dat3;
     java.sql.Timestamp currentTimestamp;
     TimeUnit timeUnit;
 
@@ -67,6 +71,9 @@ public class partyCalc extends ActionBarActivity {
     String gender;
     String result1;
     String result2;
+    String drive;
+    String partyBac;
+    String testBlank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +100,7 @@ public class partyCalc extends ActionBarActivity {
                 weightDisplay=(TextView)findViewById(R.id.WeightDisplay);
                 DrinkDisplay=(TextView)findViewById(R.id.DrinkDisplay);
                 x = Double.parseDouble(weight.getText().toString());
+                x=x*0.453592;
                 weight2=weight.getText().toString();
                 dateFormat = new SimpleDateFormat("HH:mm MM/dd");
                 cal = Calendar.getInstance();
@@ -112,29 +120,53 @@ public class partyCalc extends ActionBarActivity {
                 break;
             case R.id.pAdd2:
                 drinks=(EditText)findViewById(R.id.editDrinksP);
-                y = Double.parseDouble(drinks.getText().toString())+y;
-                setContentView(R.layout.party);
-                DrinkDisplay=(TextView)findViewById(R.id.DrinkDisplay);
-                weightDisplay=(TextView)findViewById(R.id.WeightDisplay);
-                String drinkNumberNew=String.valueOf(y);
-                drinkNumber="Drinks Consumed: "+drinkNumberNew;
-                DrinkDisplay.setText(drinkNumber);
-                weightDisplay.setText(weight2);
+                testBlank=drinks.getText().toString();
+                if(testBlank.equals("")){
+                    //drinks.setHint("Required Field");
+                    drinks.setError("Required Field");
+                }
+                else {
+                    y = Double.parseDouble(drinks.getText().toString())+y;
+                    setContentView(R.layout.party);
+                    DrinkDisplay = (TextView) findViewById(R.id.DrinkDisplay);
+                    weightDisplay = (TextView) findViewById(R.id.WeightDisplay);
+                    String drinkNumberNew = String.valueOf(y);
+                    drinkNumber = "Drinks Consumed: " + drinkNumberNew;
+                    DrinkDisplay.setText(drinkNumber);
+                    weightDisplay.setText(weight2);
+                }
                 break;
             case R.id.pCalc:
                 setContentView(R.layout.party_calc);
                 bacDisplay=(TextView)findViewById(R.id.bacDisplay);
                 hourDisplay=(TextView)findViewById(R.id.hourDisplay);
                 cal2 = Calendar.getInstance();
-                dat2=cal2.getTime();
+                dat2 = cal2.getTime();
                 currentTime=dateFormat.format(dat2);
-                diff= Math.abs(dat2.getTime()-currentTimestamp.getTime());
-                //timeUnit.convert(diff,TimeUnit.SECONDS);
+                diff= Math.abs(dat2.getTime() - currentTimestamp.getTime());
                 timeDiff=((double)diff)/3600000;
-                result1="This is the time difference in hours "+timeDiff;
-                bacDisplay.setText(result1);
-                result2="This is weight: "+x+" This is drinks: "+ drinkNumber+" "+ currentTime;
-                hourDisplay.setText(result2);
+                w=timeDiff;
+                z = ((.967 * y) / (x * C1)) - (C2 * w);
+                result1=String.format("%.3f", z);
+                partyBac="Your BAC is: "+result1;
+                if(z<.08){
+                    drive="You are under the legal limit and safe to drive.";
+                }
+                else{
+                    a=((((.967*y)/(x*C1))-0.08)/C2)-w;
+                    a2=(int)a;
+                    a3 = (10 * a - 10 * a2)/10;
+                    a3 = a3*60;
+                    int a4= (int)a3;
+                    cal = Calendar.getInstance();
+                    cal.add(Calendar.HOUR, a2);
+                    cal.add(Calendar.MINUTE,a4);
+                    dat3=cal.getTime();
+                    drive=dateFormat.format(dat3);
+                    drive = "You can drive in "+a2+ " hour(s) and "+ a4+" minutes at " +drive;
+                }
+                bacDisplay.setText(partyBac);
+                hourDisplay.setText(drive);
                 break;
             case R.id.end:
                 Intent endIntent = new Intent(this, noAccount.class);
