@@ -3,52 +3,26 @@
     android:layout_width="match_parent"
     android:padding="10dp"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
 
-    <TextView
-        android:text="Username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/etUsername"
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="136dp"
+        android:layout_gravity="center_horizontal"></GridLayout>
 
-    <TextView
-        android:text="Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/etPassword"
+    <Space
         android:layout_width="match_parent"
-        android:inputType="textPassword"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/bLogin"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content"
-        android:text="Login" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Proceed Without an Account"
-        android:onClick="onClick"
-        android:id="@+id/noAccount" />
-
-    <TextView
-        android:id="@+id/tvRegisterLink"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Register Here"
-        android:textStyle="bold" />
+        android:layout_weight="0.42" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_app"
+        android:onClick="onClick"
+        android:id="@+id/noAccount" />
 
 </LinearLayout>
