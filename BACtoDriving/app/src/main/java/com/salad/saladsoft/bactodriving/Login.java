@@ -22,31 +22,11 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
-
-        bLogin = (Button) findViewById(R.id.bLogin);
-        etUsername = (EditText) findViewById(R.id.etUsername);
-        etPassword = (EditText) findViewById(R.id.etPassword);
-        registerLink = (TextView) findViewById(R.id.tvRegisterLink);
-
-        bLogin.setOnClickListener(this);
-        registerLink.setOnClickListener(this);
-
-        userLocalStore = new UserLocalStore(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.bLogin:
-                String username = etUsername.getText().toString();
-                String password = etPassword.getText().toString();
-                User user = new User(username, password);
-                authenticate(user);
-                break;
-            case R.id.tvRegisterLink:
-                Intent registerIntent = new Intent(Login.this, Register.class);
-                startActivity(registerIntent);
-                break;
             case R.id.noAccount:
                 Intent noAccountIntent = new Intent(this, noAccount.class);
                 startActivity(noAccountIntent);

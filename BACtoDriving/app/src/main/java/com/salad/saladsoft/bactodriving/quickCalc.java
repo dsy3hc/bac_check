@@ -23,7 +23,7 @@ public class quickCalc extends ActionBarActivity {
     EditText drinks;
     EditText hours;
     TextView bac;
-    TextView hoursLeft;
+    TextView timeLeft;
     Button calculate;
     RadioGroup radioGenderGroup;
     RadioButton radioGenderButton;
@@ -72,33 +72,21 @@ public class quickCalc extends ActionBarActivity {
                     C2=0.017;
                 }
                 setContentView(R.layout.quickcalc);
-                hoursLeft=(TextView)findViewById(R.id.Drive);
+                timeLeft=(TextView)findViewById(R.id.Drive);
                 bac=(TextView)findViewById(R.id.bac);
                 x = Double.parseDouble(weight.getText().toString());
-                x = x * 0.453592;
                 y = Double.parseDouble(drinks.getText().toString());
                 w = Double.parseDouble(hours.getText().toString());
-                z = ((.967 * y) / (x * C1)) - (C2 * w);
+                z = calculateBac(x, w, y);
                 String z2 = String.format("%.3f", z);
                 String z3 = "Your BAC is: " + z2;
                 bac.setText(z3);
                 if (z < 0.08) {
                     String messageSafe = "You are below the legal limit and are safe to drive.";
-                    hoursLeft.setText(messageSafe);
+                    timeLeft.setText(messageSafe);
                 } else {
-                    a=((((.967*y)/(x*C1))-0.08)/C2)-w;
-                    int a2=(int)a;
-                    double a3 = (10 * a - 10 * a2)/10;
-                    a3 = a3*60;
-                    int a4= (int)a3;
-                    DateFormat dateFormat = new SimpleDateFormat("HH:mm MM/dd/yyyy");
-                    Calendar cal = Calendar.getInstance();
-                    cal.add(Calendar.HOUR, a2);
-                    cal.add(Calendar.MINUTE,a4);
-                    Date d2=cal.getTime();
-                    String da=dateFormat.format(d2);
-                    String z4 = "You can drive in "+a2+ " hour(s) and "+ a4+" minutes at " +da;
-                    hoursLeft.setText(z4);
+                    String tLeft = calcTimeLeft(x, w, y);
+                    timeLeft.setText(tLeft);
                 }
                 break;
             case R.id.qBack:
@@ -107,6 +95,31 @@ public class quickCalc extends ActionBarActivity {
                 break;
 
         }
+    }
+    public double calculateBac(Double weight, Double time, Double drinks){
+        Double bac = 0.0;
+        weight *=0.453592;
+        bac = ((.967 * drinks) / (weight * C1)) - (C2 * time);
+        return bac;
+    }
+
+    public String calcTimeLeft(Double weight, Double time, Double drinks){
+        double hoursLeft = 0.0;
+        double minLeft = 0.0;
+        weight *= 0.453592;
+        hoursLeft = ((((.967*drinks)/(weight*C1))-0.08)/C2)-time;
+        int hoursLeft2 = (int)hoursLeft;
+        minLeft =(10 * hoursLeft - 10 * hoursLeft2)/10;
+        minLeft*= 60;
+        int minLeft2 = (int)minLeft;
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm MM/dd/yyyy");
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.HOUR, hoursLeft2);
+        cal.add(Calendar.MINUTE,minLeft2);
+        Date timeRemaining=cal.getTime();
+        String tRemaining=dateFormat.format(timeRemaining);
+        String responseText = "You can drive in "+hoursLeft2+ " hour(s) and "+ minLeft2+" minutes at " +tRemaining;
+        return responseText;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
