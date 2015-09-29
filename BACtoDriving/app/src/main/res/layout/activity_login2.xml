@@ -19,10 +19,11 @@
         android:layout_weight="0.42" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="258dp"
         android:layout_height="wrap_content"
         android:text="@string/start_app"
         android:onClick="onClick"
-        android:id="@+id/noAccount" />
+        android:id="@+id/noAccount"
+        android:layout_gravity="center" />
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -22,11 +23,13 @@ public class quickCalc extends ActionBarActivity {
     EditText weight;
     EditText drinks;
     EditText hours;
+    NumberPicker weight2;
     TextView bac;
     TextView timeLeft;
     Button calculate;
     RadioGroup radioGenderGroup;
     RadioButton radioGenderButton;
+    NumberPicker np = null;
 
 
     double x=0;
@@ -44,6 +47,16 @@ public class quickCalc extends ActionBarActivity {
         setContentView(R.layout.activity_quick_calc);
         radioGenderGroup=(RadioGroup)findViewById(R.id.radioGroup);
         weight=(EditText)findViewById(R.id.editWeight);
+        np=(NumberPicker)findViewById(R.id.numberpicker);
+        String[] nums = new String[10];
+        for(double i=0; i<nums.length; i=i+0.5)
+            nums[i] = Double.toString(i);
+        np.setMinValue(1);
+        np.setMaxValue(20);
+        np.setWrapSelectorWheel(true);
+        np.setDisplayedValues(nums);
+        np.setValue(1);
+       // x = np.getValue();
         drinks=(EditText)findViewById(R.id.editDrinks);
         hours=(EditText)findViewById(R.id.editHours);
         calculate=(Button)findViewById(R.id.calculate);
@@ -74,9 +87,11 @@ public class quickCalc extends ActionBarActivity {
                 setContentView(R.layout.quickcalc);
                 timeLeft=(TextView)findViewById(R.id.Drive);
                 bac=(TextView)findViewById(R.id.bac);
+                //x = np.getValue();
                 x = Double.parseDouble(weight.getText().toString());
                 y = Double.parseDouble(drinks.getText().toString());
-                w = Double.parseDouble(hours.getText().toString());
+                //w = Double.parseDouble(hours.getText().toString());
+                w= np.getValue();
                 z = calculateBac(x, w, y);
                 String z2 = String.format("%.3f", z);
                 String z3 = "Your BAC is: " + z2;

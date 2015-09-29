@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:text="Gender"
         android:id="@+id/Gender"
-        android:layout_y="80dip"> </TextView>
+        android:layout_y="80dip"
+        android:layout_gravity="center"> </TextView>
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -29,12 +30,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:id="@+id/radioMale"
-            android:text="Male"/>
+            android:text="Male"
+            android:layout_gravity="center" />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/radioFemale"
-            android:text="Female"/>
+            android:text="Female" />
     </RadioGroup>
 
     <TextView android:layout_width="wrap_content"
@@ -42,33 +44,36 @@
         android:layout_height="wrap_content"
         android:text="Weight"
         android:id="@+id/Weight"
-        android:layout_y="80dip"> </TextView>
+        android:layout_y="80dip"
+        android:layout_gravity="center"> </TextView>
 
     <EditText
         android:layout_width="134dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editWeight" />
+        android:id="@+id/editWeight"
+        android:layout_gravity="center" />
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Drinks"
         android:id="@+id/Drinks"
-        />
+        android:layout_gravity="center" />
 
     <EditText
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editDrinks" />
+        android:id="@+id/editDrinks"
+        android:layout_gravity="center" />
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hours"
         android:id="@+id/Hours"
-        />
+        android:layout_gravity="center" />
 
     <EditText
         android:layout_width="134dp"
@@ -76,6 +81,9 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/editHours" />
+    <NumberPicker android:id="@+id/numberpicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"  />
 
     <Button android:layout_width="wrap_content"
         android:id="@+id/calculate"
@@ -85,5 +93,6 @@
         android:layout_y="232dip"
         android:onClick="onClick"
         android:layout_gravity="center_horizontal"> </Button>
+
 
 </LinearLayout>
