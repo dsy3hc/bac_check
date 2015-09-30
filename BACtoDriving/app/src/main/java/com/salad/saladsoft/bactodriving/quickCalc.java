@@ -48,9 +48,10 @@ public class quickCalc extends ActionBarActivity {
         radioGenderGroup=(RadioGroup)findViewById(R.id.radioGroup);
         weight=(EditText)findViewById(R.id.editWeight);
         np=(NumberPicker)findViewById(R.id.numberpicker);
-        String[] nums = new String[10];
-        for(double i=0; i<nums.length; i=i+0.5)
-            nums[i] = Double.toString(i);
+        String nums[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
+//        String[] nums = new String[10];
+//        for(double i=0; i<nums.length; i=i+0.5)
+//            nums[i] = Double.toString(i);
         np.setMinValue(1);
         np.setMaxValue(20);
         np.setWrapSelectorWheel(true);
