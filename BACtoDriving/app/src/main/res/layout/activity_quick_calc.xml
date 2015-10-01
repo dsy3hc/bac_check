@@ -59,31 +59,22 @@
         android:layout_height="wrap_content"
         android:text="Drinks"
         android:id="@+id/Drinks"
-        android:layout_gravity="center" />
+        android:layout_gravity="left|center" />
 
-    <EditText
-        android:layout_width="133dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editDrinks"
-        android:layout_gravity="center" />
-
-    <TextView android:layout_width="wrap_content"
+    <TextView android:layout_width="62dp"
         android:layout_height="wrap_content"
         android:text="Hours"
         android:id="@+id/Hours"
-        android:layout_gravity="center" />
+        android:layout_gravity="right" />
 
-    <EditText
-        android:layout_width="134dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editHours" />
-    <NumberPicker android:id="@+id/numberpicker"
+    <NumberPicker android:id="@+id/numberpicker2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <NumberPicker android:id="@+id/numberpicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"/>
 
     <Button android:layout_width="wrap_content"
         android:id="@+id/calculate"

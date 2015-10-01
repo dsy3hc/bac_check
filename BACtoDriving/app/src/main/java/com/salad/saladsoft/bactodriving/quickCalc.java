@@ -30,6 +30,8 @@ public class quickCalc extends ActionBarActivity {
     RadioGroup radioGenderGroup;
     RadioButton radioGenderButton;
     NumberPicker np = null;
+    NumberPicker np2 = null;
+
 
 
     double x=0;
@@ -57,6 +59,17 @@ public class quickCalc extends ActionBarActivity {
         np.setWrapSelectorWheel(true);
         np.setDisplayedValues(nums);
         np.setValue(1);
+
+        np2=(NumberPicker)findViewById(R.id.numberpicker2);
+        String nums2[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
+//        String[] nums = new String[10];
+//        for(double i=0; i<nums.length; i=i+0.5)
+//            nums[i] = Double.toString(i);
+        np2.setMinValue(1);
+        np2.setMaxValue(20);
+        np2.setWrapSelectorWheel(true);
+        np2.setDisplayedValues(nums2);
+        np2.setValue(1);
        // x = np.getValue();
         drinks=(EditText)findViewById(R.id.editDrinks);
         hours=(EditText)findViewById(R.id.editHours);
@@ -90,9 +103,10 @@ public class quickCalc extends ActionBarActivity {
                 bac=(TextView)findViewById(R.id.bac);
                 //x = np.getValue();
                 x = Double.parseDouble(weight.getText().toString());
-                y = Double.parseDouble(drinks.getText().toString());
+                //y = Double.parseDouble(drinks.getText().toString());
                 //w = Double.parseDouble(hours.getText().toString());
                 w= np.getValue();
+                y= np2.getValue();
                 z = calculateBac(x, w, y);
                 String z2 = String.format("%.3f", z);
                 String z3 = "Your BAC is: " + z2;
