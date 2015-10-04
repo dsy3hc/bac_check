@@ -13,10 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView"
-        android:layout_marginTop="92dp"
-        android:layout_alignParentTop="true"
+        android:text="@string/textViewWeight"
+        android:id="@+id/textViewWeightQC"
+        android:layout_below="@+id/radioFemale"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -24,45 +23,21 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView"
+        android:gravity="center"
+        android:id="@+id/editWeightQC"
+        android:layout_below="@+id/textViewWeightQC"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView3"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignLeft="@+id/numberPicker"
-        android:layout_alignStart="@+id/numberPicker" />
-
-    <NumberPicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
-
-    <NumberPicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numberPicker2"
-        android:layout_alignTop="@+id/numberPicker"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_gravity="center"
+        android:text="@string/textViewDrinks"
+        android:id="@+id/textViewDrinks"
+        android:layout_below="@+id/editWeightQC"
+        android:layout_alignLeft="@+id/editWeightQC"
+        android:layout_alignStart="@+id/editWeightQC" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -70,8 +45,8 @@
         android:id="@+id/radioFemale"
         android:text="Female"
         android:layout_alignTop="@+id/radioMale"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/editWeightQC"
+        android:layout_alignEnd="@+id/editWeightQC" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -81,17 +56,54 @@
         android:text="Male"
         android:layout_gravity="center"
         android:layout_below="@+id/radioGroup"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignLeft="@+id/editWeightQC"
+        android:layout_alignStart="@+id/editWeightQC" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView4"
+        android:text="@string/textViewGender"
+        android:id="@+id/textViewGender"
         android:layout_alignBottom="@+id/radioGroup"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/numberPickerTime"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_gravity="center"
+        android:text="@string/textViewTime"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/textViewDrinks"
+        android:layout_alignLeft="@+id/numberPickerTime"
+        android:layout_alignStart="@+id/numberPickerTime" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPickerDrinks"
+        android:layout_below="@+id/textViewDrinks"
+        android:layout_alignLeft="@+id/editWeightQC"
+        android:layout_alignStart="@+id/editWeightQC" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPickerTime"
+        android:layout_below="@+id/textView"
+        android:layout_toRightOf="@+id/textViewWeightQC"
+        android:layout_toEndOf="@+id/textViewWeightQC" />
 
 
 </RelativeLayout>

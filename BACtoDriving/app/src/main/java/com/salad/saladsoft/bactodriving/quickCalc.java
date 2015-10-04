@@ -46,25 +46,25 @@ public class quickCalc extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quick_calc);
+        setContentView(R.layout.activity_relative_quickcalc);
         radioGenderGroup=(RadioGroup)findViewById(R.id.radioGroup);
-        weight=(EditText)findViewById(R.id.editWeight);
-        np=(NumberPicker)findViewById(R.id.numberpicker);
-        String nums[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
-//        String[] nums = new String[10];
-//        for(double i=0; i<nums.length; i=i+0.5)
-//            nums[i] = Double.toString(i);
+        weight=(EditText)findViewById(R.id.editWeightQC);
+        np=(NumberPicker)findViewById(R.id.numberPickerTime);
+//        String nums[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
+        String[] nums = new String[10];
+        for(int i=0; i<nums.length; i++)
+            nums[i] = Double.toString(i);
         np.setMinValue(1);
         np.setMaxValue(20);
         np.setWrapSelectorWheel(true);
         np.setDisplayedValues(nums);
         np.setValue(1);
 
-        np2=(NumberPicker)findViewById(R.id.numberpicker2);
-        String nums2[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
-//        String[] nums = new String[10];
-//        for(double i=0; i<nums.length; i=i+0.5)
-//            nums[i] = Double.toString(i);
+        np2=(NumberPicker)findViewById(R.id.numberPickerDrinks);
+//        String nums2[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
+        String[] nums2 = new String[10];
+        for(int x=0; x<nums.length; x++)
+            nums[x] = Double.toString(x);
         np2.setMinValue(1);
         np2.setMaxValue(20);
         np2.setWrapSelectorWheel(true);
