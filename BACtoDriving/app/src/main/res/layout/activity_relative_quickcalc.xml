@@ -71,8 +71,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
+        android:text="@string/calculate"
+        android:id="@+id/calculate"
+        android:onClick="onClick"
         android:layout_marginTop="29dp"
         android:layout_below="@+id/numberPickerTime"
         android:layout_alignRight="@+id/textView"

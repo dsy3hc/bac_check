@@ -49,30 +49,32 @@ public class quickCalc extends ActionBarActivity {
         setContentView(R.layout.activity_relative_quickcalc);
         radioGenderGroup=(RadioGroup)findViewById(R.id.radioGroup);
         weight=(EditText)findViewById(R.id.editWeightQC);
+
+        np2=(NumberPicker)findViewById(R.id.numberPickerDrinks);
+//        String nums2[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
+        String[] nums2 = new String[20];
+        for(int x=0; x<nums2.length; x++)
+            nums2[x] = Integer.toString(x);
+        np2.setMinValue(1);
+        np2.setMaxValue(20);
+        np2.setWrapSelectorWheel(true);
+        np2.setDisplayedValues(nums2);
+        np2.setValue(1);
+
+
         np=(NumberPicker)findViewById(R.id.numberPickerTime);
 //        String nums[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
-        String[] nums = new String[10];
+        String[] nums = new String[20];
         for(int i=0; i<nums.length; i++)
-            nums[i] = Double.toString(i);
+            nums[i] = Integer.toString(i);
         np.setMinValue(1);
         np.setMaxValue(20);
         np.setWrapSelectorWheel(true);
         np.setDisplayedValues(nums);
         np.setValue(1);
 
-        np2=(NumberPicker)findViewById(R.id.numberPickerDrinks);
-//        String nums2[]= {"Select Fraction","1/64","1/32","3/64","1/16","5/64","3/32","7/64","1/8","9/64","5/32","11/64","3/16","13/64","7/32","15/64","1/4","17/64","9/32","19/64","5/16","21/64","11/32","23/64","3/8","25/64","13/32", "27/64","7/16","29/64"};
-        String[] nums2 = new String[10];
-        for(int x=0; x<nums.length; x++)
-            nums[x] = Double.toString(x);
-        np2.setMinValue(1);
-        np2.setMaxValue(20);
-        np2.setWrapSelectorWheel(true);
-        np2.setDisplayedValues(nums2);
-        np2.setValue(1);
+
        // x = np.getValue();
-        drinks=(EditText)findViewById(R.id.editDrinks);
-        hours=(EditText)findViewById(R.id.editHours);
         calculate=(Button)findViewById(R.id.calculate);
     }
 
@@ -101,10 +103,7 @@ public class quickCalc extends ActionBarActivity {
                 setContentView(R.layout.quickcalc);
                 timeLeft=(TextView)findViewById(R.id.Drive);
                 bac=(TextView)findViewById(R.id.bac);
-                //x = np.getValue();
                 x = Double.parseDouble(weight.getText().toString());
-                //y = Double.parseDouble(drinks.getText().toString());
-                //w = Double.parseDouble(hours.getText().toString());
                 w= np.getValue();
                 y= np2.getValue();
                 z = calculateBac(x, w, y);
