@@ -21,9 +21,6 @@ import java.util.Calendar;
 
 public class quickCalc extends ActionBarActivity {
     EditText weight;
-    EditText drinks;
-    EditText hours;
-    NumberPicker weight2;
     TextView bac;
     TextView timeLeft;
     Button calculate;
@@ -88,7 +85,7 @@ public class quickCalc extends ActionBarActivity {
     public void onClick(View v) {
        // boolean checked = ((RadioButton) v).isChecked();
         switch(v.getId()){
-            case R.id.calculate:
+            case R.id.calculate2:
                 int selectedId=radioGenderGroup.getCheckedRadioButtonId();
                 radioGenderButton=(RadioButton)findViewById(selectedId);
                 String gender= (String)radioGenderButton.getText();
