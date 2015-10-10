@@ -75,7 +75,7 @@ public class quickCalc extends ActionBarActivity {
 
 
        // x = np.getValue();
-        calculate=(Button)findViewById(R.id.calculate);
+        calculate=(Button)findViewById(R.id.calculate2);
     }
 
     @Override
