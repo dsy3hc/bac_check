@@ -17,6 +17,8 @@
     <string name="textViewDrinks">Drinks</string>
     <string name="textViewTime">Time</string>
     <string name="textViewGender">Gender</string>
+    <string name="textViewMale">Male</string>
+    <string name="textViewFemale">Female</string>
     <string name="calculate">Calculate!</string>
 
 
