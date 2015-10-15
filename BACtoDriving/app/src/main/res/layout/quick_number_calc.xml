@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:id="@+id/">
+    >
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,8 +17,8 @@
         android:id="@+id/radioFemale"
         android:text="@string/textViewFemale"
         android:layout_alignTop="@+id/radioMale"
-        android:layout_toLeftOf="@+id/numberPicker5"
-        android:layout_toStartOf="@+id/numberPicker5" />
+        android:layout_toLeftOf="@+id/numberPickerTime"
+        android:layout_toStartOf="@+id/numberPickerTime" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -34,11 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/calculate"
-        android:id="@+id/button2"
-        android:layout_below="@+id/numberPicker4"
+        android:id="@+id/calculateQuickCalc"
+        android:layout_below="@+id/numberPickerDrinks"
         android:layout_marginTop="88dp"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/editWeightQC"
+        android:layout_alignEnd="@+id/editWeightQC" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
         android:id="@+id/textView4"
         android:layout_toLeftOf="@+id/radioFemale"
         android:layout_toStartOf="@+id/radioFemale"
-        android:layout_above="@+id/numberPicker4" />
+        android:layout_above="@+id/numberPickerDrinks" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,8 +66,8 @@
         android:text="@string/textViewTime"
         android:id="@+id/textView5"
         android:layout_alignTop="@+id/textView4"
-        android:layout_toRightOf="@+id/button2"
-        android:layout_toEndOf="@+id/button2"
+        android:layout_toRightOf="@+id/calculateQuickCalc"
+        android:layout_toEndOf="@+id/calculateQuickCalc"
         android:layout_marginLeft="46dp"
         android:layout_marginStart="46dp" />
 
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/editWeightQC"
         android:width="100dp"
         android:layout_below="@+id/radioFemale"
         android:layout_centerHorizontal="true"
@@ -85,16 +85,16 @@
     <NumberPicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/numberPicker4"
-        android:layout_alignBottom="@+id/editText"
+        android:id="@+id/numberPickerDrinks"
+        android:layout_alignBottom="@+id/editWeightQC"
         android:layout_alignLeft="@+id/radioGroup"
         android:layout_alignStart="@+id/radioGroup" />
 
     <NumberPicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/numberPicker5"
-        android:layout_alignTop="@+id/numberPicker4"
+        android:id="@+id/numberPickerTime"
+        android:layout_alignTop="@+id/numberPickerDrinks"
         android:layout_alignLeft="@+id/textView5"
         android:layout_alignStart="@+id/textView5" />
 
@@ -104,8 +104,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/textViewDrinks"
         android:id="@+id/textView3"
-        android:layout_above="@+id/numberPicker4"
-        android:layout_alignLeft="@+id/numberPicker4"
-        android:layout_alignStart="@+id/numberPicker4" />
+        android:layout_above="@+id/numberPickerDrinks"
+        android:layout_alignLeft="@+id/numberPickerDrinks"
+        android:layout_alignStart="@+id/numberPickerDrinks" />
 
 </RelativeLayout>

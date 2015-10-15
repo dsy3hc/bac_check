@@ -43,7 +43,7 @@ public class quickCalc extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relative_quickcalc);
+        setContentView(R.layout.quick_number_calc);
         radioGenderGroup=(RadioGroup)findViewById(R.id.radioGroup);
         weight=(EditText)findViewById(R.id.editWeightQC);
 
@@ -72,7 +72,7 @@ public class quickCalc extends ActionBarActivity {
 
 
        // x = np.getValue();
-        calculate=(Button)findViewById(R.id.calculate2);
+        calculate=(Button)findViewById(R.id.calculateQuickCalc);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class quickCalc extends ActionBarActivity {
     public void onClick(View v) {
        // boolean checked = ((RadioButton) v).isChecked();
         switch(v.getId()){
-            case R.id.calculate2:
+            case R.id.calculateQuickCalc:
                 int selectedId=radioGenderGroup.getCheckedRadioButtonId();
                 radioGenderButton=(RadioButton)findViewById(selectedId);
                 String gender= (String)radioGenderButton.getText();
