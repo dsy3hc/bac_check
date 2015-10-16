@@ -147,6 +147,25 @@ public class quickCalc extends ActionBarActivity {
         String responseText = "You can drive in "+hoursLeft2+ " hour(s) and "+ minLeft2+" minutes at " +tRemaining;
         return responseText;
     }
+
+    public String calcTimeLeftSober(Double weight, Double time, Double drinks){
+        double hoursLeft = 0.0;
+        double minLeft = 0.0;
+        weight *= 0.453592;
+        hoursLeft = ((((.967*drinks)/(weight*C1)))/C2)-time;
+        int hoursLeft2 = (int)hoursLeft;
+        minLeft =(10 * hoursLeft - 10 * hoursLeft2)/10;
+        minLeft*= 60;
+        int minLeft2 = (int)minLeft;
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm MM/dd/yyyy");
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.HOUR, hoursLeft2);
+        cal.add(Calendar.MINUTE,minLeft2);
+        Date timeRemaining=cal.getTime();
+        String tRemaining=dateFormat.format(timeRemaining);
+        String responseText = "You can drive in "+hoursLeft2+ " hour(s) and "+ minLeft2+" minutes at " +tRemaining;
+        return responseText;
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
