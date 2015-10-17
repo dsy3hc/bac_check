@@ -44,7 +44,7 @@ public class quickCalc extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quick_number_calc);
-        radioGenderGroup=(RadioGroup)findViewById(R.id.radioGroup);
+        radioGenderGroup=(RadioGroup)findViewById(R.id.radioGroupQuick);
         weight=(EditText)findViewById(R.id.editWeightQC);
 
         np2=(NumberPicker)findViewById(R.id.numberPickerDrinks);
