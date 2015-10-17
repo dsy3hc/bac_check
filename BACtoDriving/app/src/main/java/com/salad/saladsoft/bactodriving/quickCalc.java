@@ -23,6 +23,7 @@ public class quickCalc extends ActionBarActivity {
     EditText weight;
     TextView bac;
     TextView timeLeft;
+    TextView timeLeft2;
     Button calculate;
     RadioGroup radioGenderGroup;
     RadioButton radioGenderButton;
@@ -88,7 +89,7 @@ public class quickCalc extends ActionBarActivity {
             case R.id.calculateQuickCalc:
                 int selectedId=radioGenderGroup.getCheckedRadioButtonId();
                 radioGenderButton=(RadioButton)findViewById(selectedId);
-                String gender= (String)radioGenderButton.getText();
+                String gender= "Male";
                 if(gender.equals("Male")){
                     C1=0.58;
                     C2=0.015;
@@ -99,6 +100,7 @@ public class quickCalc extends ActionBarActivity {
                 }
                 setContentView(R.layout.quickcalc);
                 timeLeft=(TextView)findViewById(R.id.Drive);
+                timeLeft2=(TextView)findViewById(R.id.textViewSober);
                 bac=(TextView)findViewById(R.id.bac);
                 x = Double.parseDouble(weight.getText().toString());
                 w= np.getValue();
@@ -110,9 +112,12 @@ public class quickCalc extends ActionBarActivity {
                 if (z < 0.08) {
                     String messageSafe = "You are below the legal limit and are safe to drive.";
                     timeLeft.setText(messageSafe);
+                    timeLeft2.setText("");
                 } else {
                     String tLeft = calcTimeLeft(x, w, y);
+                    String sLeft = calcTimeLeftSober(x,w,y);
                     timeLeft.setText(tLeft);
+                    timeLeft2.setText(sLeft);
                 }
                 break;
             case R.id.qBack:
